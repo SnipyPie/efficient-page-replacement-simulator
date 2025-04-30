@@ -1,0 +1,52 @@
+{
+  "simulation_details": {
+    "reference_string": [7, 0, 1, 2, 0, 3, 4, 2, 3, 0, 3, 2],
+    "frames_allocated": 3
+  },
+  "results": [
+    {
+      "algorithm": "FIFO",
+      "page_faults": 10,
+      "page_hits": 2,
+      "hit_ratio": 16.67,
+      "fault_ratio": 83.33
+    },
+    {
+      "algorithm": "LRU",
+      "page_faults": 9,
+      "page_hits": 3,
+      "hit_ratio": 25.0,
+      "fault_ratio": 75.0
+    },
+    {
+      "algorithm": "Optimal",
+      "page_faults": 7,
+      "page_hits": 5,
+      "hit_ratio": 41.67,
+      "fault_ratio": 58.33
+    }
+  ],
+  "logs": {
+    "FIFO": [
+      {"step": 1, "page_requested": 7, "status": "Miss", "memory": [7]},
+      {"step": 2, "page_requested": 0, "status": "Miss", "memory": [7, 0]},
+      {"step": 3, "page_requested": 1, "status": "Miss", "memory": [7, 0, 1]},
+      {"step": 4, "page_requested": 2, "status": "Miss", "memory": [0, 1, 2]},
+      {"step": 5, "page_requested": 0, "status": "Hit", "memory": [0, 1, 2]}
+    ],
+    "LRU": [
+      {"step": 1, "page_requested": 7, "status": "Miss", "memory": [7]},
+      {"step": 2, "page_requested": 0, "status": "Miss", "memory": [7, 0]},
+      {"step": 3, "page_requested": 1, "status": "Miss", "memory": [7, 0, 1]},
+      {"step": 4, "page_requested": 2, "status": "Miss", "memory": [0, 1, 2]},
+      {"step": 5, "page_requested": 0, "status": "Hit", "memory": [0, 1, 2]}
+    ],
+    "Optimal": [
+      {"step": 1, "page_requested": 7, "status": "Miss", "memory": [7]},
+      {"step": 2, "page_requested": 0, "status": "Miss", "memory": [7, 0]},
+      {"step": 3, "page_requested": 1, "status": "Miss", "memory": [7, 0, 1]},
+      {"step": 4, "page_requested": 2, "status": "Miss", "memory": [0, 1, 2]},
+      {"step": 5, "page_requested": 0, "status": "Hit", "memory": [0, 1, 2]}
+    ]
+  }
+}
